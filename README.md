@@ -6,7 +6,7 @@
 2. Image Done
 `docker images`
 3. Run Image
-`docker run -p 49160:8080 -d <your username>/yape-app-docker`
+`docker run -p 49160:5000 -d <your username>/yape-app-docker`
 4. Print output app
 Get container ID
 `docker ps`
