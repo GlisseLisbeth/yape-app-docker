@@ -1,22 +1,40 @@
-const express = require('express');
+const express     = require('express');
+const bodyParser  = require('body-parser');
+const levelup     = require('levelup');
+const morgan      = require('morgan');
+const morganjson  = require('morgan-json');
+const apiUsers    = require('./api/users');
+
 const app = express();
+const db  = levelup('./data/users', {valueEncoding: 'json'});
+const path = __dirname + '/views/';
+
+const format = morganjson({
+  short: ':method :url :status',
+  length: ':res[content-length]',
+  'response-time': ':response-time ms'
+});
+
+app.use(bodyParser.urlencoded({extended: true }));
+app.use(bodyParser.json());
+app.use(express.static(path));
+app.use(morgan(format));
+
 const router = express.Router();
 
-const path = __dirname + '/views/';
-const port = 3000;
-
-router.use(function (req,res,next) {
+router.use( (req,res,next) => {
   console.log('/' + req.method);
   next();
 });
 
-router.get('/', function(req,res){
-  res.sendFile(path + 'index.html');
+router.get('/', (req,res) => {
+  res.json({ name: 'yape-api',version: "0.0.3"});
 });
 
-app.use(express.static(path));
-app.use('/', router);
+app.use('/api', apiUsers(router, db));
 
-app.listen(port, function () {
-  console.log('Example app listening on port 3000!')
-})
+const port = process.env.PORT || 3000;
+
+app.listen(port,  () => {
+  console.log('Server running on port!' + port + '!');
+});

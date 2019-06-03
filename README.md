@@ -36,3 +36,5 @@ Yape is the application of Banco de Credito del Peru, authorizing the configurat
 `docker-compose build`
 2. Up
 `docker-compose up`
+3. Down
+`docker-compose down`
