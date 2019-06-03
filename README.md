@@ -1,14 +1,7 @@
 # YAPE APP WITH NODEJS AND DOCKER
 
 # Deploy Docker
-1. Create image docker
-`docker build -t <your username>/yape-app-docker .`
-2. Image Done
-`docker images`
-3. Run Image
-`docker run -p 49160:5000 -d <your username>/yape-app-docker`
-4. Print output app
-Get container ID
-`docker ps`
-Print app output
-`docker logs <container id>`
+1. Build
+`docker-compose build`
+2. Up
+`docker-compose up`
