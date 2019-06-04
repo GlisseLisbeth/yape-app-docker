@@ -229,7 +229,7 @@ input[type="password"]:focus:not([readonly])
   height: 65vh;
 }
 
-.ultimos-mov {
+.last-mov {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -242,7 +242,7 @@ input[type="password"]:focus:not([readonly])
   margin: 0 !important;
 }
 
-.ultimos-mov p {
+.last-mov p {
   margin-bottom: .7em;
 }
 

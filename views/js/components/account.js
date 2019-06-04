@@ -11,7 +11,7 @@ const Account = (update) => {
   const subtitle = $('<p class="center-align light-turquoise inline-block">Mostrar saldo</p>');
   const eye = $('<img src="img/icons/eye.png" width="25px">');
   const row2 = $('<div class="row dark-purple"></div>');
-  const col2 = $('<div class="col s12 ultimos-mov"></div>');
+  const col2 = $('<div class="col s12 last-mov"></div>');
   const ultMov = $('<p class="center-align font-500 white-text inline-block">ÚLTIMOS MOVIMIENTOS</p>');
   const arrow = $('<img src="img/icons/right-arrow-circular-button.png" width="25px">');
   const img = $('<img src="img/icons/icon.png" class="col s5">');
