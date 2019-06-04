@@ -31,7 +31,7 @@ Yape is the application of Banco de Credito del Peru, authorizing the configurat
 + Screen 7
   - It is the final screen where you arrive after registration. This screen does not have active functionality.
 
-## Deploy Docker
+## Deploy Local
 1. Build
 `docker-compose build`
 2. Up
