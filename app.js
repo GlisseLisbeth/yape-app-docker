@@ -36,8 +36,16 @@ router.get('/', (req,res) => {
 
 app.use('/api', apiUsers(router, db));
 
-const port = process.env.PORT || 3000;
+app.use(express.static(__dirname + '/public'));
 
-app.listen(port,  () => {
-  console.log('Server running on port!' + port + '!');
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Yape App',
+    apiUsers: apiUsers
+  });
+});
+
+
+const server = app.listen(7000, () => {
+  console.log(`Express running → PORT ${server.address().port}`);
 });
