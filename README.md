@@ -41,3 +41,8 @@ Install docker and start docker
 `docker-compose up`
 3. Down
 `docker-compose down`
+
+## Public Heroku 
+https://www.youtube.com/watch?v=6l55lOyerZk - Créditos Hari Sakti Putra
+
+
